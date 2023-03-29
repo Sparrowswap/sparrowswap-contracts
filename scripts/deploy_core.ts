@@ -8,7 +8,6 @@ import {
     uploadContract, instantiateContract, queryContract, toEncodedBinary,
 } from './helpers.js'
 import { join } from 'path'
-import { LCDClient } from '@terra-money/terra.js';
 import { chainConfigs } from "./types.d/chain_configs.js";
 import { strictEqual } from "assert";
 
@@ -16,7 +15,7 @@ const ARTIFACTS_PATH = '../artifacts'
 const SECONDS_IN_DAY: number = 60 * 60 * 24 // min, hour, day
 
 async function main() {
-    const { terra, wallet } = newClient()
+    const client = newClient()
     console.log(`chainID: ${terra.config.chainID} wallet: ${wallet.key.accAddress}`)
 
     if (!chainConfigs.generalInfo.multisig) {
@@ -26,14 +25,13 @@ async function main() {
     await uploadAndInitToken(terra, wallet)
     await uploadAndInitTreasury(terra, wallet)
     await uploadPairContracts(terra, wallet)
-    await uploadAndInitStaking(terra, wallet)
     await uploadAndInitFactory(terra, wallet)
     await uploadAndInitRouter(terra, wallet)
-    await uploadAndInitMaker(terra, wallet)
-
-    await uploadAndInitVesting(terra, wallet)
-    await uploadAndInitGenerator(terra, wallet)
-    await setupVestingAccounts(terra, wallet)
+    // await uploadAndInitMaker(terra, wallet)
+    //
+    // await uploadAndInitVesting(terra, wallet)
+    // await uploadAndInitGenerator(terra, wallet)
+    // await setupVestingAccounts(terra, wallet)
 }
 
 async function uploadAndInitToken(terra: LCDClient, wallet: any) {

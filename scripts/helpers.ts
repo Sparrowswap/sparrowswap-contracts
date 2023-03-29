@@ -21,7 +21,6 @@ import {
 import path from 'path'
 import { CustomError } from 'ts-custom-error'
 
-import { APIParams } from "@terra-money/terra.js/dist/client/lcd/APIRequester";
 import fs from "fs";
 import https from "https";
 
@@ -147,10 +146,6 @@ export async function queryContractInfo(terra: LCDClient, contractAddress: strin
 
 export async function queryCodeInfo(terra: LCDClient, codeID: number): Promise<any> {
     return await terra.wasm.codeInfo(codeID)
-}
-
-export async function queryContractRaw(terra: LCDClient, end_point: string, params?: APIParams): Promise<any> {
-    return await terra.apiRequester.getRaw(end_point, params)
 }
 
 export async function deployContract(terra: LCDClient, wallet: Wallet, admin_address: string, filepath: string, initMsg: object, label: string) {
