@@ -1,33 +1,39 @@
 import 'dotenv/config'
-import {
-    Coin,
-    Coins,
-    isTxError,
-    LCDClient,
-    LocalTerra,
-    MnemonicKey,
-    Msg,
-    MsgExecuteContract,
-    MsgInstantiateContract,
-    MsgMigrateContract,
-    MsgStoreCode,
-    MsgUpdateContractAdmin, Tx,
-    Wallet
-} from '@terra-money/terra.js';
+
 import {
     readFileSync,
     writeFileSync,
 } from 'fs'
 import path from 'path'
 import { CustomError } from 'ts-custom-error'
+import fs from 'fs'
+import https from 'https'
 
-import fs from "fs";
-import https from "https";
+import {
+  AccountData,
+  DirectSecp256k1HdWallet
+} from '@cosmjs/proto-signing'
+import { getSigningCosmWasmClient } from '@sei-js/core'
+import { SigningCosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 
 export const ARTIFACTS_PATH = '../artifacts'
 
+export interface Wallet {
+  account: AccountData
+  client: SigningCosmWasmClient
+}
+export class TransactionError extends CustomError {
+  public constructor(
+    public code: string | number,
+    public txhash: string | undefined,
+    public rawLog: string,
+  ) {
+    super("transaction failed")
+  }
+}
+
 export function getRemoteFile(file: any, url: any) {
-    let localFile = fs.createWriteStream(path.join(ARTIFACTS_PATH, `${file}.json`));
+    const localFile = fs.createWriteStream(path.join(ARTIFACTS_PATH, `${file}.json`));
 
     https.get(url, (res) => {
         res.pipe(localFile);
@@ -48,24 +54,29 @@ export function readArtifact(name: string = 'artifact', from: string = ARTIFACTS
     }
 }
 
-export interface Client {
-    wallet: Wallet
-    terra: LCDClient | LocalTerra
-}
+export async function newWallet(): Promise<Wallet> {
+  if (!process.env.MNEMONIC) {
+    throw new Error('Set the MNEMONIC env variable to the mnemonic of the wallet to use')
+  }
 
-export function newClient(): Client {
-    const client = <Client>{}
-    if (process.env.WALLET) {
-        client.terra = new LCDClient({
-            URL: String(process.env.LCD_CLIENT_URL),
-            chainID: String(process.env.CHAIN_ID)
-        })
-        client.wallet = recover(client.terra, process.env.WALLET)
-    } else {
-        client.terra = new LocalTerra()
-        client.wallet = (client.terra as LocalTerra).wallets.test1
-    }
-    return client
+  if (!process.env.RPC_URL) {
+    throw new Error('Set the RPC_URL env variable to the RPC URL of the node to use')
+  }
+
+  const signer = await DirectSecp256k1HdWallet.fromMnemonic(process.env.MNEMONIC)
+
+  const accounts = await signer.getAccounts()
+  if (accounts.length === 0) {
+    throw new Error('No accounts found in wallet')
+  }
+
+  if (accounts.length > 1) {
+    throw new Error('Multiple accounts found in wallet. Not sure which to use')
+  }
+
+  const account = accounts[0]
+  const client = await getSigningCosmWasmClient(process.env.RPC_URL, signer)
+  return { account, client }
 }
 
 export function writeArtifact(data: object, name: string = 'artifact', to: string = ARTIFACTS_PATH) {
@@ -87,16 +98,6 @@ export function getTimeoutDuration() {
 
 export async function sleep(timeout: number) {
     await new Promise(resolve => setTimeout(resolve, timeout))
-}
-
-export class TransactionError extends CustomError {
-    public constructor(
-        public code: string | number,
-        public txhash: string | undefined,
-        public rawLog: string,
-    ) {
-        super("transaction failed")
-    }
 }
 
 export async function createTransaction(wallet: Wallet, msg: Msg) {
