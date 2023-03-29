@@ -113,7 +113,7 @@ async function main() {
   console.log('network:', network)
 
   if (!network.tokenAddress) {
-    throw new Error("Token address is not set, create ASTRO token first")
+    throw new Error("Token address is not set, create RUM token first")
   }
 
   if (!network.factoryAddress) {

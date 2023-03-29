@@ -11,22 +11,25 @@ import https from 'https'
 
 import {
   AccountData,
-  DirectSecp256k1HdWallet
+  DirectSecp256k1HdWallet,
+  EncodeObject
 } from '@cosmjs/proto-signing'
 import { getSigningCosmWasmClient } from '@sei-js/core'
 import { SigningCosmWasmClient } from '@cosmjs/cosmwasm-stargate'
+import { isDeliverTxFailure } from '@cosmjs/stargate'
 
 export const ARTIFACTS_PATH = '../artifacts'
 
 export interface Wallet {
   account: AccountData
+  chainId: string
   client: SigningCosmWasmClient
 }
 export class TransactionError extends CustomError {
   public constructor(
     public code: string | number,
-    public txhash: string | undefined,
-    public rawLog: string,
+    public transactionHash: string | undefined,
+    public rawLog: string | undefined,
   ) {
     super("transaction failed")
   }
@@ -76,7 +79,13 @@ export async function newWallet(): Promise<Wallet> {
 
   const account = accounts[0]
   const client = await getSigningCosmWasmClient(process.env.RPC_URL, signer)
-  return { account, client }
+  const chainId = await client.getChainId()
+
+  if (chainId !== process.env.CHAIN_ID) {
+    throw new Error(`Chain ID mismatch. Expected ${process.env.CHAIN_ID}, got ${chainId}`)
+  }
+
+  return { account, chainId, client }
 }
 
 export function writeArtifact(data: object, name: string = 'artifact', to: string = ARTIFACTS_PATH) {
@@ -100,21 +109,10 @@ export async function sleep(timeout: number) {
     await new Promise(resolve => setTimeout(resolve, timeout))
 }
 
-export async function createTransaction(wallet: Wallet, msg: Msg) {
-    return await wallet.createAndSignTx({ msgs: [msg] })
-}
-
-export async function broadcastTransaction(terra: LCDClient, signedTx: Tx) {
-    const result = await terra.tx.broadcast(signedTx)
-    await sleep(TIMEOUT)
-    return result
-}
-
-export async function performTransaction(terra: LCDClient, wallet: Wallet, msg: Msg) {
-    const signedTx = await createTransaction(wallet, msg)
-    const result = await broadcastTransaction(terra, signedTx)
-    if (isTxError(result)) {
-        throw new TransactionError(result.code, result.codespace, result.raw_log)
+export async function performTransaction(wallet: Wallet, msg: EncodeObject) {
+    const result = await wallet.client.signAndBroadcast(wallet.account.address, [msg], 'auto')
+    if (isDeliverTxFailure(result)) {
+        throw new TransactionError(result.code, result.transactionHash, result.rawLog)
     }
     return result
 }

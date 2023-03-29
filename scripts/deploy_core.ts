@@ -7,7 +7,9 @@ import {
   readArtifact,
   deployContract,
   executeContract,
-  uploadContract, instantiateContract, queryContract, toEncodedBinary,
+  uploadContract,
+  instantiateContract,
+  queryContract
 } from './helpers'
 import { join } from 'path'
 import { chainConfigs } from './types.d/chain_configs.js'
@@ -17,7 +19,7 @@ const SECONDS_IN_DAY: number = 60 * 60 * 24 // min, hour, day
 
 async function main() {
   const wallet = await newWallet()
-  console.log(`chainID: ${terra.config.chainID} wallet: ${wallet.key.accAddress}`)
+  console.log(`chainID: ${wallet.chainId} wallet: ${wallet.account.address}`)
 
   if (!chainConfigs.generalInfo.multisig) {
     throw new Error("Set the proper owner multisig for the contracts")
@@ -31,11 +33,11 @@ async function main() {
 }
 
 async function uploadAndInitToken(wallet: Wallet) {
-  let network = readArtifact(terra.config.chainID)
+  const network = readArtifact(wallet.chainId)
 
   if (!network.tokenCodeID) {
-    network.tokenCodeID = await uploadContract(terra, wallet, join(ARTIFACTS_PATH, 'astroport_token.wasm')!)
-    writeArtifact(network, terra.config.chainID)
+    network.tokenCodeID = await uploadContract(wallet, join(ARTIFACTS_PATH, 'astroport_token.wasm')!)
+    writeArtifact(network, wallet.chainId)
     console.log(`Token codeId: ${network.tokenCodeID}`)
   }
 
@@ -48,8 +50,7 @@ async function uploadAndInitToken(wallet: Wallet) {
     }
 
     console.log('Deploying Token...')
-    let resp = await deployContract(
-      terra,
+    let response = await deployContract(
       wallet,
       chainConfigs.token.admin,
       join(ARTIFACTS_PATH, 'astroport_token.wasm'),
@@ -57,18 +58,17 @@ async function uploadAndInitToken(wallet: Wallet) {
       chainConfigs.token.label,
     )
 
-    // @ts-ignore
-    network.tokenAddress = resp.shift().shift()
-    console.log("astro:", network.tokenAddress)
-    console.log(await queryContract(terra, network.tokenAddress, { token_info: {} }))
-    console.log(await queryContract(terra, network.tokenAddress, { minter: {} }))
+    network.tokenAddress = response.shift().shift()
+    console.log("rum:", network.tokenAddress)
+    console.log(await queryContract(wallet, network.tokenAddress, { token_info: {} }))
+    console.log(await queryContract(wallet, network.tokenAddress, { minter: {} }))
 
     for (let i = 0; i < chainConfigs.token.initMsg.initial_balances.length; i++) {
-      let balance = await queryContract(terra, network.tokenAddress, { balance: { address: chainConfigs.token.initMsg.initial_balances[i].address } })
+      const balance = await queryContract(wallet, network.tokenAddress, { balance: { address: chainConfigs.token.initMsg.initial_balances[i].address } })
       strictEqual(balance.balance, chainConfigs.token.initMsg.initial_balances[i].amount)
     }
 
-    writeArtifact(network, terra.config.chainID)
+    writeArtifact(network, wallet.chainId)
   }
 }
 
