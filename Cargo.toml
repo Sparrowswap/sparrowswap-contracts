@@ -1,0 +1,28 @@
+[workspace]
+members = [
+    "packages/*",
+    "contracts/factory",
+    "contracts/pair",
+    "contracts/pair_stable",
+    "contracts/router",
+    "contracts/token",
+    "contracts/whitelist",
+    "contracts/tokenomics/generator",
+    "contracts/tokenomics/maker",
+    "contracts/tokenomics/staking",
+    "contracts/tokenomics/vesting",
+    "contracts/tokenomics/xastro_token",
+    "contracts/pair_astro_xastro",
+    "contracts/periphery/oracle",
+]
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = 'abort'
+incremental = false
+overflow-checks = true
