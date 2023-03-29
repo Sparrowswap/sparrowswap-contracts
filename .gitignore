@@ -16,4 +16,3 @@ target/
 .cargo-ok
 /scripts/.env
 /scripts/node_modules/
-/artifacts/

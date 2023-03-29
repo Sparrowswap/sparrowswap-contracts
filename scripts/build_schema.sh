@@ -13,10 +13,6 @@ for c in "$projectPath"/contracts/*; do
   fi
 done
 
-for c in "$projectPath"/contracts/tokenomics/*; do
-  (cd $c && cargo schema)
-done
-
 for c in "$projectPath"/contracts/periphery/*; do
   (cd $c && cargo schema)
 done
