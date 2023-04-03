@@ -6,14 +6,31 @@
 
 # Build results
 target/
+artifacts/localsei.json
+artifacts/sei-chain.json
 
 # IDEs
 .vscode/
 .idea/
 *.iml
 
+# Dependencies
+node_modules
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Auto-gen
 .cargo-ok
-/scripts/.env
-/scripts/node_modules/
-/artifacts/
+.env
+.env.local
+.env.*.local

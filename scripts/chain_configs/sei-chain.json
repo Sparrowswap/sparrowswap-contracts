@@ -1,0 +1,114 @@
+{
+  "generalInfo": {
+    "multisig": "sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd"
+  },
+  "token": {
+    "admin": null,
+    "initMsg": {
+      "name": "Rum",
+      "symbol": "RUM",
+      "decimals": 6,
+      "initial_balances": [
+        {
+          "address": null,
+          "amount": "1100000000000000"
+        }
+      ],
+      "marketing": {
+        "project": "SparrowSwap",
+        "description": "SparrowSwap is a neutral marketplace where anyone, from anywhere in the galaxy, can dock to trade their wares.",
+        "marketing": null,
+        "logo": {
+          "url": "https://astroport.fi/astro_logo.svg"
+        }
+      }
+    },
+    "label": "SparrowSwap RUM"
+  },
+  "treasury": {
+    "admin": null,
+    "initMsg": {
+      "admins": [
+        null
+      ],
+      "mutable": true
+    },
+    "label": "SparrowSwap Treasury"
+  },
+  "factory": {
+    "admin": null,
+    "initMsg": {
+      "owner": null,
+      "pair_configs": [
+        {
+          "code_id": null,
+          "pair_type": {
+            "xyk": {}
+          },
+          "total_fee_bps": 30,
+          "maker_fee_bps": 3333,
+          "is_disabled": false,
+          "is_generator_disabled": true
+        },
+        {
+          "code_id": null,
+          "pair_type": {
+            "stable": {}
+          },
+          "total_fee_bps": 5,
+          "maker_fee_bps": 5000,
+          "is_disabled": false,
+          "is_generator_disabled": true
+        }
+      ],
+      "token_code_id": null,
+      "fee_address": null,
+      "generator_address": null,
+      "whitelist_code_id": null
+    },
+    "label": "SparrowSwap Factory",
+    "change_owner": false,
+    "proposeNewOwner": {
+      "owner": null,
+      "expires_in": 604800
+    }
+  },
+  "router": {
+    "admin": null,
+    "initMsg": {
+      "astroport_factory": null
+    },
+    "label": "SparrowSwap Router"
+  },
+  "oracle": {
+    "admin": null,
+    "initMsg": {
+      "factory_contract": null,
+      "asset_infos": null
+    },
+    "label": "SparrowSwap Oracle"
+  },
+  "createPairs": {
+    "pairs": [
+      {
+        "identifier": "SEIRUM",
+        "assetInfos": [
+          {
+            "token": {
+              "contract_addr": "sei1sexkvw0d87f8scsqn7qmvjk8lq20xq27ng2ed4gerjasl2f7f0wq98jlcp"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "useiiii"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
+      }
+    ]
+  }
+}
