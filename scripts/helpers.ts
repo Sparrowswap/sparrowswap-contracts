@@ -11,6 +11,7 @@ import https from 'https'
 
 import {
   AccountData,
+  Coin,
   DirectSecp256k1HdWallet,
   EncodeObject
 } from '@cosmjs/proto-signing'
@@ -140,12 +141,11 @@ export async function instantiateContract(wallet: Wallet, admin_address: string 
   })
   return result.logs[0].events.filter(el => el.type == 'instantiate').map(x => x.attributes.filter(element => element.key == '_contract_address').map(x => x.value));
 }
-//
-// export async function executeContract(terra: LCDClient, wallet: Wallet, contractAddress: string, msg: object, coins?: Coins.Input) {
-//     const executeMsg = new MsgExecuteContract(wallet.key.accAddress, contractAddress, msg, coins);
-//     return await performTransaction(terra, wallet, executeMsg);
-// }
-//
+
+export async function executeContract(wallet: Wallet, contractAddress: string, msg: object, funds?: Coin[]) {
+    return await wallet.client.execute(wallet.account.address, contractAddress, msg, calculateFee(4000000, wallet.gasPrice), undefined, funds)
+}
+
 export async function queryContract(wallet: Wallet, contractAddress: string, query: object): Promise<any> {
   return await wallet.client.queryContractSmart(contractAddress, query)
 }
