@@ -29,5 +29,6 @@ yarn-error.log*
 
 # Auto-gen
 .cargo-ok
+.env
 .env.local
 .env.*.local
