@@ -12,6 +12,7 @@ import https from 'https'
 import {
   AccountData,
   Coin,
+  coin,
   DirectSecp256k1HdWallet,
   EncodeObject
 } from '@cosmjs/proto-signing'
@@ -104,19 +105,6 @@ export function writeArtifact(data: object, name: string = 'artifact', to: strin
   writeFileSync(path.join(to, `${name}.json`), JSON.stringify(data, null, 2))
 }
 
-// Tequila lcd is load balanced, so txs can't be sent too fast, otherwise account sequence queries
-// may resolve an older state depending on which lcd you end up with. Generally 1000 ms is enough
-// for all nodes to sync up.
-let TIMEOUT = 1000
-
-export function setTimeoutDuration(t: number) {
-  TIMEOUT = t
-}
-
-export function getTimeoutDuration() {
-  return TIMEOUT
-}
-
 export async function sleep(timeout: number) {
   await new Promise(resolve => setTimeout(resolve, timeout))
 }
@@ -134,7 +122,7 @@ export async function uploadContract(wallet: Wallet, filepath: string) {
   const result = await wallet.client.upload(wallet.account.address, contract, calculateFee(4000000, wallet.gasPrice))
   return result.codeId
 }
-//
+
 export async function instantiateContract(wallet: Wallet, admin_address: string | undefined, codeId: number, msg: object, label: string) {
   const result = await wallet.client.instantiate(wallet.account.address, codeId, msg, label, calculateFee(4000000, wallet.gasPrice), {
     admin: admin_address
@@ -149,169 +137,132 @@ export async function executeContract(wallet: Wallet, contractAddress: string, m
 export async function queryContract(wallet: Wallet, contractAddress: string, query: object): Promise<any> {
   return await wallet.client.queryContractSmart(contractAddress, query)
 }
-//
-// export async function queryContractInfo(terra: LCDClient, contractAddress: string): Promise<any> {
-//     return await terra.wasm.contractInfo(contractAddress)
-// }
-//
-// export async function queryCodeInfo(terra: LCDClient, codeID: number): Promise<any> {
-//     return await terra.wasm.codeInfo(codeID)
-// }
-//
+
 export async function deployContract(wallet: Wallet, admin_address: string, filepath: string, initMsg: object, label: string) {
   const codeId = await uploadContract(wallet, filepath);
   return await instantiateContract(wallet, admin_address, codeId, initMsg, label);
 }
-//
-// export async function migrate(terra: LCDClient, wallet: Wallet, contractAddress: string, newCodeId: number, msg: object) {
-//     const migrateMsg = new MsgMigrateContract(wallet.key.accAddress, contractAddress, newCodeId, msg);
-//     return await performTransaction(terra, wallet, migrateMsg);
-// }
-//
-// export async function update_contract_admin(
-//     terra: LCDClient,
-//     wallet: Wallet,
-//     contract_address: string,
-//     admin_address: string
-// ) {
-//     let msg = new MsgUpdateContractAdmin(
-//         wallet.key.accAddress,
-//         admin_address,
-//         contract_address
-//     );
-//
-//     return await performTransaction(terra, wallet, msg);
-// }
-//
-// export function initialize(terra: LCDClient) {
-//     const mk = new MnemonicKey();
-//
-//     console.log(`Account Address: ${mk.accAddress}`);
-//     console.log(`MnemonicKey: ${mk.mnemonic}`);
-//
-//     return terra.wallet(mk);
-// }
-//
-// export function toEncodedBinary(object: any) {
-//     return Buffer.from(JSON.stringify(object)).toString('base64');
-// }
-//
-// export function strToEncodedBinary(data: string) {
-//     return Buffer.from(data).toString('base64');
-// }
-//
-// export function toDecodedBinary(data: string) {
-//     return Buffer.from(data, 'base64')
-// }
-//
-// export class NativeAsset {
-//     denom: string;
-//     amount?: string
-//
-//     constructor(denom: string, amount?: string) {
-//         this.denom = denom
-//         this.amount = amount
-//     }
-//
-//     getInfo() {
-//         return {
-//             "native_token": {
-//                 "denom": this.denom,
-//             }
-//         }
-//     }
-//
-//     withAmount() {
-//         return {
-//             "info": this.getInfo(),
-//             "amount": this.amount
-//         }
-//     }
-//
-//     getDenom() {
-//         return this.denom
-//     }
-//
-//     toCoin() {
-//         return new Coin(this.denom, this.amount || "0")
-//     }
-// }
-//
-// export class TokenAsset {
-//     addr: string;
-//     amount?: string
-//
-//     constructor(addr: string, amount?: string) {
-//         this.addr = addr
-//         this.amount = amount
-//     }
-//
-//     getInfo() {
-//         return {
-//             "token": {
-//                 "contract_addr": this.addr
-//             }
-//         }
-//     }
-//
-//     withAmount() {
-//         return {
-//             "info": this.getInfo(),
-//             "amount": this.amount
-//         }
-//     }
-//
-//     toCoin() {
-//         return null
-//     }
-//
-//     getDenom() {
-//         return this.addr
-//     }
-// }
-//
-// export class NativeSwap {
-//     offer_denom: string;
-//     ask_denom: string;
-//
-//     constructor(offer_denom: string, ask_denom: string) {
-//         this.offer_denom = offer_denom
-//         this.ask_denom = ask_denom
-//     }
-//
-//     getInfo() {
-//         return {
-//             "native_swap": {
-//                 "offer_denom": this.offer_denom,
-//                 "ask_denom": this.ask_denom
-//             }
-//         }
-//     }
-// }
-//
-// export class AstroSwap {
-//     offer_asset_info: TokenAsset | NativeAsset;
-//     ask_asset_info: TokenAsset | NativeAsset;
-//
-//     constructor(offer_asset_info: TokenAsset | NativeAsset, ask_asset_info: TokenAsset | NativeAsset) {
-//         this.offer_asset_info = offer_asset_info
-//         this.ask_asset_info = ask_asset_info
-//     }
-//
-//     getInfo() {
-//         return {
-//             "astro_swap": {
-//                 "offer_asset_info": this.offer_asset_info.getInfo(),
-//                 "ask_asset_info": this.ask_asset_info.getInfo(),
-//             }
-//         }
-//     }
-// }
-//
-// export function checkParams(network: any, required_params: any) {
-//     for (const k in required_params) {
-//         if (!network[required_params[k]]) {
-//             throw "Set required param: " + required_params[k]
-//         }
-//     }
-// }
+
+export function toEncodedBinary(object: any) {
+    return Buffer.from(JSON.stringify(object)).toString('base64');
+}
+
+export function strToEncodedBinary(data: string) {
+    return Buffer.from(data).toString('base64');
+}
+
+export function toDecodedBinary(data: string) {
+    return Buffer.from(data, 'base64')
+}
+
+export class NativeAsset {
+    denom: string;
+    amount?: string
+
+    constructor(denom: string, amount?: string) {
+        this.denom = denom
+        this.amount = amount
+    }
+
+    getInfo() {
+        return {
+            "native_token": {
+                "denom": this.denom,
+            }
+        }
+    }
+
+    withAmount() {
+        return {
+            "info": this.getInfo(),
+            "amount": this.amount
+        }
+    }
+
+    getDenom() {
+        return this.denom
+    }
+
+    toCoin() {
+        return coin(this.amount || "0", this.denom)
+    }
+}
+
+export class TokenAsset {
+    addr: string;
+    amount?: string
+
+    constructor(addr: string, amount?: string) {
+        this.addr = addr
+        this.amount = amount
+    }
+
+    getInfo() {
+        return {
+            "token": {
+                "contract_addr": this.addr
+            }
+        }
+    }
+
+    withAmount() {
+        return {
+            "info": this.getInfo(),
+            "amount": this.amount
+        }
+    }
+
+    toCoin() {
+        return null
+    }
+
+    getDenom() {
+        return this.addr
+    }
+}
+
+export class NativeSwap {
+    offer_denom: string;
+    ask_denom: string;
+
+    constructor(offer_denom: string, ask_denom: string) {
+        this.offer_denom = offer_denom
+        this.ask_denom = ask_denom
+    }
+
+    getInfo() {
+        return {
+            "native_swap": {
+                "offer_denom": this.offer_denom,
+                "ask_denom": this.ask_denom
+            }
+        }
+    }
+}
+
+export class AstroSwap {
+    offer_asset_info: TokenAsset | NativeAsset;
+    ask_asset_info: TokenAsset | NativeAsset;
+
+    constructor(offer_asset_info: TokenAsset | NativeAsset, ask_asset_info: TokenAsset | NativeAsset) {
+        this.offer_asset_info = offer_asset_info
+        this.ask_asset_info = ask_asset_info
+    }
+
+    getInfo() {
+        return {
+            "astro_swap": {
+                "offer_asset_info": this.offer_asset_info.getInfo(),
+                "ask_asset_info": this.ask_asset_info.getInfo(),
+            }
+        }
+    }
+}
+
+export function checkParams(network: any, required_params: any) {
+    for (const k in required_params) {
+        if (!network[required_params[k]]) {
+            throw "Set required param: " + required_params[k]
+        }
+    }
+}

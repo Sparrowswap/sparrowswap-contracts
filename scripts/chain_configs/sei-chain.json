@@ -48,7 +48,7 @@
           "total_fee_bps": 30,
           "maker_fee_bps": 3333,
           "is_disabled": false,
-          "is_generator_disabled": false
+          "is_generator_disabled": true
         },
         {
           "code_id": null,
@@ -58,7 +58,7 @@
           "total_fee_bps": 5,
           "maker_fee_bps": 5000,
           "is_disabled": false,
-          "is_generator_disabled": false
+          "is_generator_disabled": true
         }
       ],
       "token_code_id": null,
@@ -89,6 +89,26 @@
     "label": "SparrowSwap Oracle"
   },
   "createPairs": {
-    "pairs": []
+    "pairs": [
+      {
+        "identifier": "SEIRUM",
+        "assetInfos": [
+          {
+            "token": {
+              "contract_addr": "sei1sexkvw0d87f8scsqn7qmvjk8lq20xq27ng2ed4gerjasl2f7f0wq98jlcp"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "useiiii"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
+      }
+    ]
   }
 }

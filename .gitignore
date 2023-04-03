@@ -6,6 +6,8 @@
 
 # Build results
 target/
+artifacts/localsei.json
+artifacts/sei-chain.json
 
 # IDEs
 .vscode/

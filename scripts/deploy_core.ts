@@ -182,7 +182,7 @@ async function uploadAndInitTreasury(wallet: Wallet) {
 
     network.treasuryAddress = response?.shift()?.shift()
     console.log(`Treasury Contract Address: ${network.treasuryAddress}`)
-    writeArtifact(network, network.chainId)
+    writeArtifact(network, wallet.chainId)
   }
 }
 
