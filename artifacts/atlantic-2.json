@@ -1,13 +1,13 @@
 {
-  "tokenCodeID": 114,
-  "tokenAddress": "sei1mvkw9shen8vq7v0tmmhs7ut7avr2q7vm85eypv7vrve9v394eq2s4xa97f",
-  "whitelistCodeID": 116,
-  "treasuryAddress": "sei1drrrptth6lxcl88kus09vv8zuq5dnx77tasc3nyqdxnh9324hu3s5xhgnt",
-  "pairCodeID": 117,
-  "pairStableCodeID": 118,
-  "factoryAddress": "sei1uad9qayzjz2kwuy4xqfp99m0kud07lpsjptua9umknkjlxnwgejqz4pm06",
-  "routerAddress": "sei15l42c2efr7e88lath9wkqwjept6grg2cx3t89vnf0wule2gyrmlqw9vhm5",
-  "poolSEIRUM": "sei1j0n58kp3ume32z7gska3xxva6v6nxyk24k8062ds5nezkgc3z7zspkfz5g",
-  "lpTokenSEIRUM": "sei14ch6mhjqc4fkfkrm4k8kpu8e8srlr4fy7fu2jx0maem6hceerj0q6y3cde",
-  "oracleSEIRUM": "sei1ucm5k6aylj8vlvctr7mckvp2lxckp6xuusgq07tlm0mzp567hdusvxzvhu"
+  "tokenCodeID": 122,
+  "tokenAddress": "sei14vq8n0sg6682lnm4446rzeg3wkkpkxwqxg3t0qew4qhwq2j3e7uskwn8t3",
+  "whitelistCodeID": 124,
+  "treasuryAddress": "sei1vj2rrf4ma6jylkyesr8sv3m2tzmzkxgehcm5fqhjwvqaqq7l2lkq4a2cwr",
+  "pairCodeID": 125,
+  "pairStableCodeID": 126,
+  "factoryAddress": "sei14kafnhea7gje658pmlew6lvy6ndavrls4rjh5clxqjxdchfkf5kqpjppxw",
+  "routerAddress": "sei1zvgrz67ddm50ktmk4jy2lzcphyc6cn3m7cdm42xg8vg4f6njpsas6w6xd6",
+  "poolSEIRUM": "sei1r0yqwcat93fddgk064s4jj3wschmka5tuv7ku9nqf2an2f5fv0ksvyggsq",
+  "lpTokenSEIRUM": "sei1zwvw9sf73qkg2qkqq80u93xqmdpfudqmjclekz06l2kx2qtdj04se07kza",
+  "oracleSEIRUM": "sei1huy7xlrpr9revxvz4jhlzsg0hmezy7gwhz3f5ekzkmeaxlcngumqznxj9q"
 }
