@@ -94,13 +94,13 @@
         "identifier": "SEIRUM",
         "assetInfos": [
           {
-            "token": {
-              "contract_addr": "sei1xmsxzq9up5y2gj6e3fxmuqu4hvr2v0yu7qt34qn6amqpcxmejeuqlumuvk"
+            "native_token": {
+              "denom": "usei"
             }
           },
           {
-            "native_token": {
-              "denom": "usei"
+            "token": {
+              "contract_addr": "sei1xmsxzq9up5y2gj6e3fxmuqu4hvr2v0yu7qt34qn6amqpcxmejeuqlumuvk"
             }
           }
         ],

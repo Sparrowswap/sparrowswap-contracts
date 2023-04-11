@@ -7,10 +7,10 @@
   "pairStableCodeID": 126,
   "factoryAddress": "sei14kafnhea7gje658pmlew6lvy6ndavrls4rjh5clxqjxdchfkf5kqpjppxw",
   "routerAddress": "sei1zvgrz67ddm50ktmk4jy2lzcphyc6cn3m7cdm42xg8vg4f6njpsas6w6xd6",
-  "poolSEIRUM": "sei1r0yqwcat93fddgk064s4jj3wschmka5tuv7ku9nqf2an2f5fv0ksvyggsq",
-  "lpTokenSEIRUM": "sei1zwvw9sf73qkg2qkqq80u93xqmdpfudqmjclekz06l2kx2qtdj04se07kza",
-  "oracleSEIRUM": "sei1huy7xlrpr9revxvz4jhlzsg0hmezy7gwhz3f5ekzkmeaxlcngumqznxj9q",
   "poolSEIUSDC": "sei1dgs47p8fe384pepp4q09fqwxu0xpr99j69d7avhqkfs5vsyzvl2sajz57m",
   "lpTokenSEIUSDC": "sei1yfjdpvfke57kfexafx3twqdv7slnjwp9c3xfd830fv4kh5njlwnsun4r43",
-  "oracleSEIUSDC": "sei1kaejlans75ufmgj45k769u4g74dl5nh95gc9hqz9q7ek739ve08qf6w9ep"
+  "oracleSEIUSDC": "sei1kaejlans75ufmgj45k769u4g74dl5nh95gc9hqz9q7ek739ve08qf6w9ep",
+  "poolSEIRUM": "sei1eg8c6g9sat4rpn92hkhfj83llgtlx5xjxnh9f9g9m9jlq4m63zks8sxrwe",
+  "lpTokenSEIRUM": "sei1kzcegreh9lx2vhf55p7j7x23hpjtvzv8wd7u3r34ccjx0ydpm36qxqj7uf",
+  "oracleSEIRUM": "sei1clqjv8ceymaf6tstlx5puj0pfx09d4274kauxedmgc8dvk2gljkscd4vjf"
 }
