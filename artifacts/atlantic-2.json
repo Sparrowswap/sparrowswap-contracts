@@ -1,0 +1,13 @@
+{
+  "tokenCodeID": 114,
+  "tokenAddress": "sei1mvkw9shen8vq7v0tmmhs7ut7avr2q7vm85eypv7vrve9v394eq2s4xa97f",
+  "whitelistCodeID": 116,
+  "treasuryAddress": "sei1drrrptth6lxcl88kus09vv8zuq5dnx77tasc3nyqdxnh9324hu3s5xhgnt",
+  "pairCodeID": 117,
+  "pairStableCodeID": 118,
+  "factoryAddress": "sei1uad9qayzjz2kwuy4xqfp99m0kud07lpsjptua9umknkjlxnwgejqz4pm06",
+  "routerAddress": "sei15l42c2efr7e88lath9wkqwjept6grg2cx3t89vnf0wule2gyrmlqw9vhm5",
+  "poolSEIRUM": "sei1j0n58kp3ume32z7gska3xxva6v6nxyk24k8062ds5nezkgc3z7zspkfz5g",
+  "lpTokenSEIRUM": "sei14ch6mhjqc4fkfkrm4k8kpu8e8srlr4fy7fu2jx0maem6hceerj0q6y3cde",
+  "oracleSEIRUM": "sei1ucm5k6aylj8vlvctr7mckvp2lxckp6xuusgq07tlm0mzp567hdusvxzvhu"
+}
