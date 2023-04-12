@@ -127,6 +127,44 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "SEIECLIP",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei16gm824zzamyvlldku3g56n7ful4wnzteqlkxyzmk8u9lxheyzx9szaxx00"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
+      },
+      {
+        "identifier": "ECLIPUSDC",
+        "assetInfos": [
+          {
+            "token": {
+              "contract_addr": "sei16gm824zzamyvlldku3g56n7ful4wnzteqlkxyzmk8u9lxheyzx9szaxx00"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
       }
     ]
   }

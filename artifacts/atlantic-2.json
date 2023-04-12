@@ -12,5 +12,11 @@
   "oracleSEIUSDC": "sei1kaejlans75ufmgj45k769u4g74dl5nh95gc9hqz9q7ek739ve08qf6w9ep",
   "poolSEIRUM": "sei1eg8c6g9sat4rpn92hkhfj83llgtlx5xjxnh9f9g9m9jlq4m63zks8sxrwe",
   "lpTokenSEIRUM": "sei1kzcegreh9lx2vhf55p7j7x23hpjtvzv8wd7u3r34ccjx0ydpm36qxqj7uf",
-  "oracleSEIRUM": "sei1clqjv8ceymaf6tstlx5puj0pfx09d4274kauxedmgc8dvk2gljkscd4vjf"
+  "oracleSEIRUM": "sei1clqjv8ceymaf6tstlx5puj0pfx09d4274kauxedmgc8dvk2gljkscd4vjf",
+  "poolSEIECLIP": "sei1gyqttyq4w7w923h4vmsh8shfrftf2em6x2ag2jhxeddz5n8dlk0srs98vr",
+  "lpTokenSEIECLIP": "sei13ru5kmjgpkaayrutkjgp899cw6r7y5khhs52sr57p42r664lgg9qhchh3t",
+  "oracleSEIECLIP": "sei1zf7x4x0tvt3kxkaez0wvljdteh9yhtl9e399c2jvpq2z534ecctswptupq",
+  "poolECLIPUSDC": "sei1fzjzhsjwmt678u7s70gr9jgpxhfmkhufcr67xzseadfsee23g44ssdpwjv",
+  "lpTokenECLIPUSDC": "sei1y5670vpgurksqf7harum9wdnyg285lx7p088ntl3xk43fccz09gsxsr6qr",
+  "oracleECLIPUSDC": "sei1flnh7vpwkqxznr9ku05cgjujwc002nsfesx3gut8q93ggg3lhthq7fxc0r"
 }
