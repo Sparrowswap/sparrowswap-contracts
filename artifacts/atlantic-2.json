@@ -18,5 +18,8 @@
   "oracleSEIECLIP": "sei1zf7x4x0tvt3kxkaez0wvljdteh9yhtl9e399c2jvpq2z534ecctswptupq",
   "poolECLIPUSDC": "sei1fzjzhsjwmt678u7s70gr9jgpxhfmkhufcr67xzseadfsee23g44ssdpwjv",
   "lpTokenECLIPUSDC": "sei1y5670vpgurksqf7harum9wdnyg285lx7p088ntl3xk43fccz09gsxsr6qr",
-  "oracleECLIPUSDC": "sei1flnh7vpwkqxznr9ku05cgjujwc002nsfesx3gut8q93ggg3lhthq7fxc0r"
+  "oracleECLIPUSDC": "sei1flnh7vpwkqxznr9ku05cgjujwc002nsfesx3gut8q93ggg3lhthq7fxc0r",
+  "poolSEIFABLE": "sei1wdcpv4s7trs8l0qqf82zqxep8ywd27f3jcxe7fquahf7ewtgmglsm8y953",
+  "lpTokenSEIFABLE": "sei1jrvqruv6gpm522y87249evd4a5wq7tgddddhx3lwk6xjk4ucl6yqvds2h7",
+  "oracleSEIFABLE": "sei1rgm49hkj9ddfyejjtzdur9z52tct429n3ryaalmvahyzy2qn85nqatrrgr"
 }
