@@ -184,6 +184,25 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "FABLEUSDC",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "factory/sei1rrhh4syyqsl4gtml0t55mcmt34x98gne23fgk3hsas0pjfw2mhyqhz5rxq/FABLE"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
       }
     ]
   }
