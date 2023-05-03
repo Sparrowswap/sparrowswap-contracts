@@ -27,5 +27,11 @@
   "oracleFABLEUSDC": "sei1p6gcxce265v9vr4u55z6a487sr4ehnlalgsg7cwqkw5k8e7k06ls635gl4",
   "poolSEIUSDT": "sei1pqcgdn5vmf3g9ncs98vtxkydc6su0f9rk3uk73s5ku2xhthr6avswrwnrx",
   "lpTokenSEIUSDT": "sei1jkuh6mtm93kdu764jxr4z6xnfxmh7zyax2h2z2n3lraxsx6fsteqp26x00",
-  "oracleSEIUSDT": "sei1d7mtgvzry3zdq4d05cyyasu08xkrp96zznar9d74hjxrj5nte32ske2w8q"
+  "oracleSEIUSDT": "sei1d7mtgvzry3zdq4d05cyyasu08xkrp96zznar9d74hjxrj5nte32ske2w8q",
+  "poolSEISEN": "sei1tx2l768290t6zun0njukgf3kwtjrh2vtqgjxq6le7e0wgphxtajs80d7xs",
+  "lpTokenSEISEN": "sei1j5a7ugn9q8kltvkx5r472re74atspfqdu7ct6rjakecw03c62tgqyx3dh9",
+  "oracleSEISEN": "sei1p0l2h69exadz7t25tkcun255yetmfczdd5ghuw7qgsjtzmz0uajq66rq47",
+  "poolSENUSDC": "sei1d00cmsk7uym7mtrsrcnhhdza8mpu346klhrpufkzzxkvy9wlegeqe9rlhp",
+  "lpTokenSENUSDC": "sei13m52yvaqzhgp62z0adjjw5y05gnwc2ffgh50vcm34rs3unvdpe3s8zh9yt",
+  "oracleSENUSDC": "sei1k3m44a92e0p9tmuk5kj3fnm4gazzf0wuaz9ppe5ansv5mlamct8qyrdyc0"
 }

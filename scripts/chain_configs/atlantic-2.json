@@ -222,6 +222,44 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "SEISEN",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1dreru8834gk69045rxha0rkfle5azrqdqr07md/SEN"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
+      },
+      {
+        "identifier": "SENUSDC",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "factory/sei1dreru8834gk69045rxha0rkfle5azrqdqr07md/SEN"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
       }
     ]
   }
