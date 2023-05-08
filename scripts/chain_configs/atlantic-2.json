@@ -260,6 +260,25 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "SEIMANJI",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei1jg4uy5flrn874p670adt4che9gvluxqvyzsnluc5j0xx304l4edqjypgn7"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
       }
     ]
   }

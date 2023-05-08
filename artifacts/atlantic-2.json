@@ -33,5 +33,7 @@
   "oracleSEISEN": "sei1p0l2h69exadz7t25tkcun255yetmfczdd5ghuw7qgsjtzmz0uajq66rq47",
   "poolSENUSDC": "sei1d00cmsk7uym7mtrsrcnhhdza8mpu346klhrpufkzzxkvy9wlegeqe9rlhp",
   "lpTokenSENUSDC": "sei13m52yvaqzhgp62z0adjjw5y05gnwc2ffgh50vcm34rs3unvdpe3s8zh9yt",
-  "oracleSENUSDC": "sei1k3m44a92e0p9tmuk5kj3fnm4gazzf0wuaz9ppe5ansv5mlamct8qyrdyc0"
+  "oracleSENUSDC": "sei1k3m44a92e0p9tmuk5kj3fnm4gazzf0wuaz9ppe5ansv5mlamct8qyrdyc0",
+  "poolSEIMANJI": "sei1yqpvlrp4j7nkvel6zg0x5xv2wgdur5rdm3x3ylqxz9kl27j0jl9s5wvakd",
+  "lpTokenSEIMANJI": "sei1knnlzkg0kszramw4twnhrpc9vn3pjucdthrq47d29r8rwhfpwa2sql6ld0"
 }
