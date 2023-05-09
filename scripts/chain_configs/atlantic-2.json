@@ -279,6 +279,25 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "SEIDUEL",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei1rj0rc6smxuxa48jru524g40zhc2q2fqgd2vav208y240ualj7mkqhxv2zy"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
       }
     ]
   }
