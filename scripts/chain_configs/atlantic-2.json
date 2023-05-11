@@ -298,6 +298,25 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "SEIPEPE",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/upepe"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
       }
     ]
   }
