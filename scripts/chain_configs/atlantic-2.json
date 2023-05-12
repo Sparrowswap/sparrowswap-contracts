@@ -317,6 +317,25 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "SEISPONGE",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usponge"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": true
       }
     ]
   }
