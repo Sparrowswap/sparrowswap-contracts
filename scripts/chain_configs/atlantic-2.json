@@ -336,6 +336,44 @@
           "xyk": {}
         },
         "initOracle": true
+      },
+      {
+        "identifier": "SEISEA",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei1m6z6skzw9dhw79mu658ak2y2lecq6tc5aw38ndvznqumqlsrarpqrmgy4a"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
+      },
+      {
+        "identifier": "SEIASTRO",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "ibc/4552BF8EE9C7AFD889CACF426F866350AAE28DC73507B1411972C8C1B9B38732"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }

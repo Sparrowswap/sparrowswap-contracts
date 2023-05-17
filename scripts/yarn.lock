@@ -48,7 +48,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/cosmwasm-stargate@npm:^0.29.5":
+"@cosmjs/cosmwasm-stargate@npm:0.29.5":
   version: 0.29.5
   resolution: "@cosmjs/cosmwasm-stargate@npm:0.29.5"
   dependencies:
@@ -82,7 +82,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/crypto@npm:^0.29.5":
+"@cosmjs/crypto@npm:0.29.5, @cosmjs/crypto@npm:^0.29.5":
   version: 0.29.5
   resolution: "@cosmjs/crypto@npm:0.29.5"
   dependencies:
@@ -562,11 +562,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sei-js/core@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "@sei-js/core@npm:1.3.0"
+"@sei-js/core@npm:1.3.4":
+  version: 1.3.4
+  resolution: "@sei-js/core@npm:1.3.4"
   dependencies:
-    "@cosmjs/cosmwasm-stargate": "npm:^0.29.5"
+    "@cosmjs/amino": "npm:0.29.5"
+    "@cosmjs/cosmwasm-stargate": "npm:0.29.5"
+    "@cosmjs/crypto": "npm:0.29.5"
     "@cosmjs/encoding": "npm:0.29.5"
     "@cosmjs/json-rpc": "npm:0.29.5"
     "@cosmjs/math": "npm:0.29.5"
@@ -578,7 +580,7 @@ __metadata:
     "@sei-js/proto": "npm:1.2.0"
     readonly-date: "npm:^1.0.0"
     xstream: "npm:^11.14.0"
-  checksum: 8b33adda74003ab222c69df9c9a95042a0d7cadd02f37c5bed3f0521ea97b8f41513b0a610fc37234eae0e5c164991b35ad8717b4a115416313c89617732c2f0
+  checksum: 5e80016e7c4232391c3bb1becb379457b6c0efbb21bd01075a34d63ca7c159c2593c00b371968ce171181d091611fc307f8201b1fb01b43fe91f2b657f046b2f
   languageName: node
   linkType: hard
 
@@ -2004,10 +2006,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "scripts@workspace:."
   dependencies:
-    "@cosmjs/cosmwasm-stargate": "npm:^0.29.5"
-    "@cosmjs/proto-signing": "npm:^0.29.5"
-    "@cosmjs/stargate": "npm:^0.29.5"
-    "@sei-js/core": "npm:^1.3.0"
+    "@cosmjs/cosmwasm-stargate": "npm:0.29.5"
+    "@cosmjs/proto-signing": "npm:0.29.5"
+    "@cosmjs/stargate": "npm:0.29.5"
+    "@sei-js/core": "npm:1.3.4"
     "@types/node": "npm:^18.15.11"
     "@typescript-eslint/eslint-plugin": "npm:5.57.0"
     "@typescript-eslint/parser": "npm:5.57.0"
