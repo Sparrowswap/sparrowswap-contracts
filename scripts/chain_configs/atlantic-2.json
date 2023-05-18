@@ -374,6 +374,44 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEICEBNB",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1w34h2uqqmq8hmppqzpawp44y7xxlhcz2q8elrglpa959gv6583rshqtnkg/wbnb"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
+      },
+      {
+        "identifier": "SEICEBUSD",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1w34h2uqqmq8hmppqzpawp44y7xxlhcz2q8elrglpa959gv6583rshqtnkg/wbusd"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }

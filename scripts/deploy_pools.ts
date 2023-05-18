@@ -8,7 +8,7 @@ import {
   deployContract,
   executeContract,
   queryContract,
-  toEncodedBinary
+  toEncodedBinary, sleep
 } from './helpers.js'
 import { join } from 'path'
 import { chainConfigs } from './types.d/chain_configs.js'
@@ -81,6 +81,7 @@ async function createPools(wallet: Wallet) {
       })
 
       network[pool_pair_key] = response.logs[0].events.filter(el => el.type == 'wasm').map(x => x.attributes.filter(el => el.key === "pair_contract_addr").map(x => x.value))[0][0]
+      await sleep(5000)
       const pool_info = await queryContract(wallet, network[pool_pair_key], {
         pair: {}
       })
