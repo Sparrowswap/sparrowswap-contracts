@@ -53,5 +53,7 @@
   "poolSEICEBNB": "sei145my6xu5md4k3mk8mzc28nxwvmcj7a092vl95huedxvlcm8gft0stme7h6",
   "lpTokenSEICEBNB": "sei1mt3khrtm8k7hkphl85q2jnnv3slmtxj00g8u8nhdr4rve6wffwyqs0e5vc",
   "poolSEICEBUSD": "sei1qr0gly78lxmslez4mtu966qwj3h8t57w9gue3cu85267fvkthtwq29u4g6",
-  "lpTokenSEICEBUSD": "sei18nqn5cdj9a7a35hqwm6774vmqtuf0mxdrf5dk9xs6qtncx8n3t2srkky7v"
+  "lpTokenSEICEBUSD": "sei18nqn5cdj9a7a35hqwm6774vmqtuf0mxdrf5dk9xs6qtncx8n3t2srkky7v",
+  "poolSEISUSD": "sei1uxq4s8ltz7w5plem84hvy95rrazx2rsnrmq4sucfvp2v9vwh948sj9muun",
+  "lpTokenSEISUSD": "sei1rkvur265w89a4wzytkl05exlpzucce3ujj55572yjejfjsaqljzqqytcr8"
 }
