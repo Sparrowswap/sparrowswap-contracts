@@ -431,6 +431,25 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEISLSTI",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "ibc/53B6183707AF4C744EE26815613D9C4D0DE40E2C18083EA5B384FAF4F6BB0C06"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }
