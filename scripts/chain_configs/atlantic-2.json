@@ -450,6 +450,28 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "USDCUSDT",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1h3ukufh4lhacftdf6kyxzum4p86rcnel35v4jk/usdt"
+            }
+          }
+        ],
+        "pairType": {
+          "stable": {}
+        },
+        "initParams": {
+          "amp": 100
+        },
+        "initOracle": false
       }
     ]
   }
