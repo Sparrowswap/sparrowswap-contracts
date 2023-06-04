@@ -472,6 +472,28 @@
           "amp": 100
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEIZIO",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1nsfrq4m5rnwtq5f0awkzr6u9wpsycctjlgzr9q/ZIO"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initParams": {
+          "amp": 100
+        },
+        "initOracle": false
       }
     ]
   }
