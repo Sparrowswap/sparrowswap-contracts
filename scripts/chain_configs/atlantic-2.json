@@ -490,8 +490,43 @@
         "pairType": {
           "xyk": {}
         },
-        "initParams": {
-          "amp": 100
+        "initOracle": false
+      },
+      {
+        "identifier": "SEIYESP",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1s6dnc4zxcan6ag7ms72znv8vcpxlzg80fudptg/YESP"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
+      },
+      {
+        "identifier": "SEIYOLE",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei1lrhpn2ftcdct3a2z66s5t0ye09tlgz5k82hqkdzyjgtyhn76twyq5j6qvr"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
         },
         "initOracle": false
       }
