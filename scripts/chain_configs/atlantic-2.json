@@ -529,6 +529,25 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEIDOGE",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1j8xuxg6wzuphmplqjwh9kgpa394h235j8gt6p9/doge"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }
