@@ -548,6 +548,25 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEISMT",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei1cw0vqx5xlqef2f8fat2wwyx6aycmx2wnavqq8jer73x34qfhlnes8mwnkx"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }
