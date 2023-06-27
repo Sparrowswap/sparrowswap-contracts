@@ -565,6 +565,25 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEIBRIL",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei10ta0kdwzf66rjgtkf88ayr6nlkm2h7vxe30upy/BRIL"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }
