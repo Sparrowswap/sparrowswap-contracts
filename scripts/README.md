@@ -1,11 +1,4 @@
-## Astroport Core Scripts
-
-### Build local env
-
-```shell
-npm install
-npm start
-```
+## Sparrowswap Core Scripts
 
 ### Deploy on `testnet`
 
@@ -13,17 +6,18 @@ Set multisig address in corresponding config or create new one in chain_configs
 
 Build contract:
 ```shell
-npm run build-release
+yarn build-release
 ```
 
 Create `.env`:
 ```shell
-WALLET="mnemonic"
-LCD_CLIENT_URL=https://pisco-lcd.terra.dev
-CHAIN_ID=pisco-1
+MNEMONIC="..."
+RPC_URL=https://rpc.atlantic-2.seinetwork.io/
+CHAIN_ID=atlantic-2
+GAS_PRICE=0.0025usei
 ```
 
 Deploy the contracts:
 ```shell
-npm run build-app
+yarn build-app
 ```
