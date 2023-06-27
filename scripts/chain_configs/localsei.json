@@ -15,15 +15,13 @@
         }
       ],
       "marketing": {
-        "project": "SparrowSwap",
-        "description": "SparrowSwap is a neutral marketplace where anyone, from anywhere in the galaxy, can dock to trade their wares.",
+        "project": "Sparrowswap",
+        "description": "Sparrowswap is a neutral marketplace where anyone, from anywhere in the galaxy, can dock to trade their wares.",
         "marketing": null,
-        "logo": {
-          "url": "https://astroport.fi/astro_logo.svg"
-        }
+        "logo": null
       }
     },
-    "label": "SparrowSwap RUM"
+    "label": "Sparrowswap RUM"
   },
   "treasury": {
     "admin": null,
@@ -33,7 +31,7 @@
       ],
       "mutable": true
     },
-    "label": "SparrowSwap Treasury"
+    "label": "Sparrowswap Treasury"
   },
   "factory": {
     "admin": null,
@@ -66,7 +64,7 @@
       "generator_address": null,
       "whitelist_code_id": null
     },
-    "label": "SparrowSwap Factory",
+    "label": "Sparrowswap Factory",
     "change_owner": false,
     "proposeNewOwner": {
       "owner": null,
@@ -78,7 +76,7 @@
     "initMsg": {
       "astroport_factory": null
     },
-    "label": "SparrowSwap Router"
+    "label": "Sparrowswap Router"
   },
   "oracle": {
     "admin": null,
@@ -86,7 +84,7 @@
       "factory_contract": null,
       "asset_infos": null
     },
-    "label": "SparrowSwap Oracle"
+    "label": "Sparrowswap Oracle"
   },
   "createPairs": {
     "pairs": []
