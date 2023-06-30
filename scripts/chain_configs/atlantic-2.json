@@ -584,6 +584,44 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEIKPT",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei1amm3euthqn5dn33sartp7jww5lvp40t4evtlmephvfmvw0dreh7qqhyp6l"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
+      },
+      {
+        "identifier": "SEIKUSD",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1eaffhjnw6kzznfhcuq69aflagc3pauq5dwtg66knxxmjk5p8xyeqhstugq/kUSD"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }
