@@ -622,6 +622,28 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "USDCKUSD",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc"
+            }
+          },
+          {
+            "native_token": {
+              "denom": "factory/sei1eaffhjnw6kzznfhcuq69aflagc3pauq5dwtg66knxxmjk5p8xyeqhstugq/kUSD"
+            }
+          }
+        ],
+        "pairType": {
+          "stable": {}
+        },
+        "initParams": {
+          "amp": 100
+        },
+        "initOracle": false
       }
     ]
   }

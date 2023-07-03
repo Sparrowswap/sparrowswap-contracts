@@ -75,5 +75,7 @@
   "poolSEIKPT": "sei1jn4ky5yf4pfrzygu4yykjfmd0n7a96szk0j0zla8vq502t5gxsqs0nswhr",
   "lpTokenSEIKPT": "sei1gx9fvy0p6uls9n0hmu22yx9u2slg7403dep0492g0dymdqlhnjrsp9fs8l",
   "poolSEIKUSD": "sei17gtj62r2h29ca57hjzw2fgk90snj2rletnadpfnvevjyjam46qeq7lgkyn",
-  "lpTokenSEIKUSD": "sei1p6qzzdh365tnpseyhh5yz6fqzzdhw5qsanj0xr0snjmqmdtuu7wq4uu5wt"
+  "lpTokenSEIKUSD": "sei1p6qzzdh365tnpseyhh5yz6fqzzdhw5qsanj0xr0snjmqmdtuu7wq4uu5wt",
+  "poolUSDCKUSD": "sei1fqy9cclcs2sl6d47f6zyjayzg9hqn3lmyc9mhsuwsn6m6ezfvdeqm9pe8e",
+  "lpTokenUSDCKUSD": "sei10snsks4hpdlm30ylfkgadvdsw8tvwgduwmkvfxaq2e6naf0yl48qyzrhzy"
 }
