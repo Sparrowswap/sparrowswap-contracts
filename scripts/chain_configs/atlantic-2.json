@@ -663,6 +663,25 @@
           "xyk": {}
         },
         "initOracle": false
+      },
+      {
+        "identifier": "SEISGO",
+        "assetInfos": [
+          {
+            "native_token": {
+              "denom": "usei"
+            }
+          },
+          {
+            "token": {
+              "contract_addr": "sei1gu0wk29nhd2a238r2gt068y4re8r4fk53yv49gqz6ykr96fg9zqqc4cwtk"
+            }
+          }
+        ],
+        "pairType": {
+          "xyk": {}
+        },
+        "initOracle": false
       }
     ]
   }
